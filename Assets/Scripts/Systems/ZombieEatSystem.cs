@@ -32,7 +32,7 @@ public partial struct ZombieEatSystem : ISystem
             DeltaTime = deltaTime,
             ECB = ecbSingleton.CreateCommandBuffer(state.WorldUnmanaged).AsParallelWriter(),
             BrainEntity = brainEntity,
-            BrainRadiusSq = brainRadius
+            BrainRadiusSq = brainRadius * brainRadius
         }.ScheduleParallel();
     }
 }
